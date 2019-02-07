@@ -14,10 +14,10 @@ class App extends Component {
           <p>
            I am Come back React
           </p>
-          <Person />
-          <Person />
-          <Person />
-          <Person />
+          <Person name="Amal" age="75" >My hobby is Racing</Person>
+          <Person name="Kamal" age="25" />
+          <Person name="Sunil" age="3" />
+          <Person name="Nimal" age="29" />
 
       </div>
     );
