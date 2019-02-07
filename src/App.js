@@ -8,16 +8,26 @@ class App extends Component {
     super();
     console.log("Hi am in App")
   }
+
+  state={
+    person:[
+      {name:"Amal", age:75},
+      {name:"Kamal", age:25},
+      {name:"Sunil", age:3},
+      {name:"Nimal", age:29},
+
+    ]
+  }
   render() {
     return (
       <div className="App">
           <p>
            I am Come back React
           </p>
-          <Person name="Amal" age="75" >My hobby is Racing</Person>
-          <Person name="Kamal" age="25" />
-          <Person name="Sunil" age="3" />
-          <Person name="Nimal" age="29" />
+          <Person name={this.state.person[0].name} age={this.state.person[0].age} >My hobby is Racing</Person>
+          <Person name={this.state.person[1].name}  age={this.state.person[1].age} />
+          <Person name={this.state.person[2].name}  age={this.state.person[2].age} />
+          <Person name={this.state.person[3].name}  age={this.state.person[3].age} />
 
       </div>
     );
