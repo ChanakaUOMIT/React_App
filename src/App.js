@@ -50,6 +50,13 @@ class App extends Component {
   }
 
   render() {
+    const style={
+      backgroundColor:'white',
+      font:'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor:'pointer'
+    }
     return (
       <div className="App">
           <p>
@@ -57,7 +64,9 @@ class App extends Component {
           </p>
 
           {/* better way to pass paramerter */}
-          <button onClick={this.switchNameHandler.bind(this, "Chanka..!")} >Switch Name</button>
+          <button 
+            style={style}
+            onClick={this.switchNameHandler.bind(this, "Chanka..!")} >Switch Name</button>
 
           <Person 
             name={this.state.person[0].name} 
