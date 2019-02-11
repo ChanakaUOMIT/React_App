@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import classesStyle from './App.css'
 import Person from './Components/Person/Person';
-import Radium, { StyleRoot } from 'radium';
+// import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
   constructor(){
@@ -97,10 +98,10 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor:'pointer',
-      ':hover':{
-        backgroundColor:'lightgreen',
-        color:'black'
-      }
+      // ':hover':{
+      //   backgroundColor:'lightgreen',
+      //   color:'black'
+      // }
     }
 
     let persons=null;
@@ -122,10 +123,10 @@ class App extends Component {
       );
 
       style.backgroundColor='red';
-      style[':hover']={
-        backgroundColor:'salmon',
-        color:'black'
-      }
+      // style[':hover']={
+      //   backgroundColor:'salmon',
+      //   color:'black'
+      // }
 
       // persons=(
       //   <div>
@@ -169,7 +170,6 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
         <div className="App">
           <h1>React Playground</h1>
           {/* <p className={classes} > */}
@@ -220,9 +220,9 @@ class App extends Component {
          
 
       </div>
-      </StyleRoot>
     );
   }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
