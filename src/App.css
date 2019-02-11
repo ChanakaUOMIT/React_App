@@ -3,12 +3,11 @@
 }
 
 .red{
-  color:blue;
+  color:red;
 }
 
 .bold{
   font-weight: bold;
-  font-size: 45px;
 }
 
 @keyframes App-logo-spin {

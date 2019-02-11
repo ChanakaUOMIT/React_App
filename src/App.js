@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Person from './Components/Person/Person';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
   constructor(){
@@ -95,7 +96,11 @@ class App extends Component {
       font:'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor:'pointer'
+      cursor:'pointer',
+      ':hover':{
+        backgroundColor:'lightgreen',
+        color:'black'
+      }
     }
 
     let persons=null;
@@ -116,7 +121,11 @@ class App extends Component {
         </div>
       );
 
-      style.backgroundColor='red'
+      style.backgroundColor='red';
+      style[':hover']={
+        backgroundColor:'salmon',
+        color:'black'
+      }
 
       // persons=(
       //   <div>
@@ -148,13 +157,23 @@ class App extends Component {
       // )
     }
 
-    let classes=['red','bold'].join(' ');
-    console.log("classes "+classes)
+    // let classes=['red','bold'].join(' ');
+    // console.log("classes "+classes)
+
+    const classes=[];
+    if(this.state.persons.length<=2){
+      classes.push('red');
+    };
+    if(this.state.persons.length<=1){
+      classes.push('bold');
+    }
 
     return (
-      <div className="App">
+      <StyleRoot>
+        <div className="App">
           <h1>React Playground</h1>
-          <p className={classes} >
+          {/* <p className={classes} > */}
+          <p className={classes.join(' ')} >
           {/* <p className="red" > */}
           {/* style={{color:'red'}} */}
            I am Come back React
@@ -201,8 +220,9 @@ class App extends Component {
          
 
       </div>
+      </StyleRoot>
     );
   }
 }
 
-export default App;
+export default Radium(App);
