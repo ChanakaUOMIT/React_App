@@ -147,9 +147,16 @@ class App extends Component {
       //   </div>
       // )
     }
+
+    let classes=['red','bold'].join(' ');
+    console.log("classes "+classes)
+
     return (
       <div className="App">
-          <p>
+          <h1>React Playground</h1>
+          <p className={classes} >
+          {/* <p className="red" > */}
+          {/* style={{color:'red'}} */}
            I am Come back React
           </p>
 
@@ -157,7 +164,7 @@ class App extends Component {
           <button 
             style={style}
             // onClick={this.switchNameHandler.bind(this, "Chanka..!")} >Switch Name</button>
-            onClick={this.togglePersonsHandler} >Switch Name</button>
+            onClick={this.togglePersonsHandler} >Toggle Persons</button>
 
             {persons}
             {/* {this.state.showPersons ?
