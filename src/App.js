@@ -11,33 +11,33 @@ class App extends Component {
 
   state={
     persons:[
-      {name:"Amal", age:75},
-      {name:"Kamal", age:25},
-      {name:"Sunil", age:3},
-      {name:"Nimal", age:29},
+        {id:"dsfd1",name:"Amal", age:75},
+        {id:"dsfd2",name:"Kamal", age:25},
+        {id:"dsfd3",name:"Sunil", age:3},
+        {id:"dsfd4",name:"Nimal", age:29},
 
     ],
     showPersons:false
   }
 
-  switchNameHandler=(newName)=>{
-    console.log("Clicked Switch Name");
-    this.setState({
-      persons:[
-        // {name:newName, age:75},
-        {name:"Amal", age:75},
-        {name:"Kamal", age:25},
-        {name:"Sunil", age:3},
-        {name:"Nimal", age:19},
-      ]
-    });
+  // switchNameHandler=(newName)=>{
+  //   console.log("Clicked Switch Name");
+  //   this.setState({
+  //     persons:[
+  //       // {name:newName, age:75},
+  //       {name:"Amal", age:75},
+  //       // {name:"Kamal", age:25},
+  //       // {name:"Sunil", age:3},
+  //       // {name:"Nimal", age:19},
+  //     ]
+  //   });
 
-    // console.log(this.state.person[0].name);
-    // this.state.person[0].name='Chanaka';
-    // console.log(this.state.person[0].name);
+  //   // console.log(this.state.person[0].name);
+  //   // this.state.person[0].name='Chanaka';
+  //   // console.log(this.state.person[0].name);
 
 
-  }
+  // }
 
   nameChangedHandler=(event, id)=>{
     const personIndex =this.state.persons.findIndex(p =>{
@@ -50,7 +50,9 @@ class App extends Component {
 
     // const person =Object.assign({}, this.state.persons[personIndex])
 
+    console.log(" ******** ",person);
     person.name=event.target.value;
+    console.log(" ******** ",person);
 
     const persons=[...this.state.persons];
     persons[personIndex]=person;
@@ -88,7 +90,8 @@ class App extends Component {
 
   render() {
     const style={
-      backgroundColor:'white',
+      backgroundColor:'green',
+      color:'white',
       font:'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -108,10 +111,13 @@ class App extends Component {
                 key={person.id}
                 changed={(event)=>this.nameChangedHandler(event, person.id)}
               />
-            
+             
           })}
         </div>
-      )
+      );
+
+      style.backgroundColor='red'
+
       // persons=(
       //   <div>
       //     <Person 
