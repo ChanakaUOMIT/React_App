@@ -91,20 +91,22 @@ class App extends Component {
   }
 
   render() {
-    const style={
-      backgroundColor:'green',
-      color:'white',
-      font:'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor:'pointer',
-      // ':hover':{
-      //   backgroundColor:'lightgreen',
-      //   color:'black'
-      // }
-    }
+    // const style={
+    //   backgroundColor:'green',
+    //   color:'white',
+    //   font:'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor:'pointer',
+    //   // ':hover':{
+    //   //   backgroundColor:'lightgreen',
+    //   //   color:'black'
+    //   // }
+    // }
 
     let persons=null;
+    let btnClass='';
+
 
     if(this.state.showPersons){
       persons =(
@@ -122,7 +124,9 @@ class App extends Component {
         </div>
       );
 
-      style.backgroundColor='red';
+      btnClass=classesStyle.Red;
+
+      // style.backgroundColor='red';
       // style[':hover']={
       //   backgroundColor:'salmon',
       //   color:'black'
@@ -163,14 +167,16 @@ class App extends Component {
 
     const classes=[];
     if(this.state.persons.length<=2){
-      classes.push('red');
+      // classes.push('red');
+      classes.push(classesStyle.red);
     };
     if(this.state.persons.length<=1){
-      classes.push('bold');
+      classes.push(classesStyle.bold);
     }
 
     return (
-        <div className="App">
+        // <div className="App">
+        <div className={classesStyle.App}>
           <h1>React Playground</h1>
           {/* <p className={classes} > */}
           <p className={classes.join(' ')} >
@@ -181,7 +187,9 @@ class App extends Component {
 
           {/* better way to pass paramerter */}
           <button 
-            style={style}
+          className={btnClass}
+          // className={classesStyle.Button}
+            // style={style}
             // onClick={this.switchNameHandler.bind(this, "Chanka..!")} >Switch Name</button>
             onClick={this.togglePersonsHandler} >Toggle Persons</button>
 
