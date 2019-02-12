@@ -8,21 +8,40 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Cockpit from '../Components/Cockpit/Cockpit';
 
 class App extends Component {
-  constructor(){
-    super();
-    console.log("Hi am in App")
-  }
+  constructor(props){
+    super(props);
+    console.log("[App.js] Inside Constructor ",props);
 
-  state={
-    persons:[
+    this.state={
+      persons:[
         {id:"dsfd1",name:"Amal", age:75},
         {id:"dsfd2",name:"Kamal", age:25},
         {id:"dsfd3",name:"Sunil", age:3},
         {id:"dsfd4",name:"Nimal", age:29},
 
     ],
-    showPersons:false
+      showPersons:false
+    }
   }
+
+  componentWillMount(){
+    console.log("[App.js] Inside Components Will Mount");
+  }
+
+  componentDidMount(){
+    console.log("[App.js] Inside Components Did Mount");
+  }
+
+  // state={
+  //   persons:[
+  //       {id:"dsfd1",name:"Amal", age:75},
+  //       {id:"dsfd2",name:"Kamal", age:25},
+  //       {id:"dsfd3",name:"Sunil", age:3},
+  //       {id:"dsfd4",name:"Nimal", age:29},
+
+  //   ],
+  //   showPersons:false
+  // }
 
   // switchNameHandler=(newName)=>{
   //   console.log("Clicked Switch Name");
@@ -82,6 +101,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("[App.js] Inside Render")
 
     let persons=null;
 
@@ -91,13 +111,14 @@ class App extends Component {
             persons={this.state.persons}
             clicked={this.deletePersonHandler}
             changed={this.nameChangedHandler}
-          />
+          /> 
 
     }
 
     return (
         <div className={classesStyle.App}>
             <Cockpit 
+              appTitle={this.props.title}
               showPersons={this.state.showPersons}
               persons={this.state.persons}
               clicked={this.togglePersonsHandler}

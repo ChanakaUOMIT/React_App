@@ -19,7 +19,7 @@ const cockpit=(props)=>{
 
       return(
           <div className={classesStyle.Cockpit}>
-              <h1>React Playground</h1>
+              <h1>{props.appTitle}</h1>
                 <p className={classes.join(' ')} >
                 I am Come back React
                 </p>
