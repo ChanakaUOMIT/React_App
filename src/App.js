@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import classesStyle from './App.css'
 import Person from './Components/Person/Person';
 // import Radium, { StyleRoot } from 'radium';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   constructor(){
@@ -112,13 +113,15 @@ class App extends Component {
       persons =(
         <div>
           {this.state.persons.map((person, index) =>{
-            return <Person 
+            return <ErrorBoundary key={person.id}>
+              <Person 
                 name={person.name}
                 age={person.age}
                 click={()=> this.deletePersonHandler(index)}
-                key={person.id}
+                // key={person.id}
                 changed={(event)=>this.nameChangedHandler(event, person.id)}
               />
+            </ErrorBoundary>
              
           })}
         </div>
