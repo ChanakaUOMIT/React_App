@@ -163,14 +163,16 @@ class App extends Component {
 
     const classes=[];
     if(this.state.persons.length<=2){
-      classes.push('red');
+      // classes.push('red');
+      classes.push(classesStyle.red);
     };
     if(this.state.persons.length<=1){
-      classes.push('bold');
+      classes.push(classesStyle.bold);
     }
 
     return (
-        <div className="App">
+        // <div className="App">
+        <div className={classesStyle.App}>
           <h1>React Playground</h1>
           {/* <p className={classes} > */}
           <p className={classes.join(' ')} >
