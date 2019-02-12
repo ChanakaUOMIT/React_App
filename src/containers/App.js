@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
 import classesStyle from './App.css'
-import Person from './Components/Person/Person';
+import Person from '../Components/Persons/Person/Person';
 // import Radium, { StyleRoot } from 'radium';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   constructor(){
